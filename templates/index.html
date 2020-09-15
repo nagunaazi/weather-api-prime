@@ -1,0 +1,52 @@
+<table align="center" border="0">
+    <form action="{% url 'weather_details' %}" method="post">
+        {%  csrf_token %}
+    <tr><th>
+        WEATHER DETAILS
+    </th></tr>
+    <tr><th>
+        city names
+        <input type="text" name="c1" required>
+        <tr><th>    date     <input type="date" id="birthday" name="b1" required>
+
+</th></tr>
+        <tr><th><button type="submit" value="Submit">search</button></th></tr>
+
+    </th>
+    </tr>
+    </form>
+    <tr>
+        {%  if error_message %}
+            <th>{{ error_message }}</th>
+        {% endif %}
+    </tr>
+</table>
+
+<table align="center" border="2">
+{#    <tr>{{ data }}</tr>#}
+{%  for x,y in data.items%}
+    <tr>
+    <th>{{ x }}</th><th>{{ y }}</th>
+    </tr>
+{% endfor %}
+</table>
+{#</table>#}
+{#{{ data }}#}
+
+{##}
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<body>#}
+{##}
+{#<h2>Date Field</h2>#}
+{##}
+{##}
+{#<form action="{% url 'weather_details' %}">#}
+{#  <label for="birthday">Date:</label>#}
+{#  <input type="date" id="birthday" name="b1">#}
+{#  <input type="submit" value="Submit">#}
+{#</form>#}
+
+{##}
+{#</body>#}
+{#</html>#}
